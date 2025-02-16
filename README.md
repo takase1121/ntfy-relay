@@ -1,6 +1,10 @@
 # Ntfy Relay
 
-Ntfy Relay is a simple Android application designed to relay incoming notifications to an Ntfy server. It provides an easy way to bridge notifications from your Android device to your preferred Ntfy server, enabling you to receive notifications across multiple devices and platforms seamlessly.
+Ntfy Relay is a simple Android application designed to relay incoming notifications to an Ntfy server.
+It provides an easy way to bridge notifications from your Android device to your preferred Ntfy server,
+enabling you to receive notifications across multiple devices and platforms seamlessly.
+
+This fork adds support for HTTP Basic and Token auth flows, as well as a notification to start / stop the service.
 
 ## Features
 
@@ -11,7 +15,8 @@ Ntfy Relay is a simple Android application designed to relay incoming notificati
 
 ## How it Works
 
-Ntfy Relay works by intercepting notifications on your Android device and forwarding them to an Ntfy server using a simple HTTPS request. The Ntfy server then processes and delivers these notifications to your desired destinations, such as other devices or messaging platforms.
+Ntfy Relay works by intercepting notifications on your Android device and forwarding them to an Ntfy server using a simple HTTPS request.
+The Ntfy server then processes and delivers these notifications to your desired destinations, such as other devices or messaging platforms.
 
 ## Installation
 

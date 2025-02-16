@@ -1,37 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/desc_logo"
         android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="16dp"
+        android:text="@string/desc_notification_url" />
 
     <EditText
         android:id="@+id/url_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Notification URL"
-        android:layout_marginTop="16dp"
-        android:inputType="textUri" />
+        android:hint="@string/desc_enter_notification_url"
+        android:importantForAutofill="no"
+        android:inputType="textUri"
+        android:minHeight="48dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center_horizontal"
-        android:layout_marginTop="16dp">
+        android:orientation="vertical">
 
-        <Switch
-            android:id="@+id/switch1"
+        <TextView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/desc_authentication" />
+
+        <RadioGroup
+            android:id="@+id/authModeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/radioAuthNone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_auth_none" />
+
+            <RadioButton
+                android:id="@+id/radioAuthBasic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_auth_basic" />
+
+            <RadioButton
+                android:id="@+id/radioAuthToken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_auth_token" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/credentialsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_credentials"
+                android:textAppearance="@android:style/TextAppearance.Material.Small" />
+
+            <EditText
+                android:id="@+id/usernameText"
+                android:minHeight="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:ems="10"
+                android:hint="@string/desc_username"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/passwordText"
+                android:minHeight="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:autofillHints="password"
+                android:ems="10"
+                android:hint="@string/desc_password"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <ToggleButton
+            android:id="@+id/startSwitch"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>

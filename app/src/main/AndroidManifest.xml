@@ -2,16 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
-        android:label="Ntfy Relay"
-        android:icon="@drawable/logo"
         android:banner="@drawable/banner"
-        android:theme="@android:style/Theme.DeviceDefault.Light"
-        tools:targetApi="31">
+        android:icon="@drawable/logo"
+        android:label="Ntfy Relay"
+        android:theme="@style/Theme.AppCompat.DayNight"
+        tools:targetApi="35">
+        <receiver
+            android:name=".NotificationControlService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,7 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".NotificationListenerService"
+
+        <service
+            android:name=".NotificationListenerService"
             android:exported="true"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
